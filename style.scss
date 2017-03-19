@@ -1,0 +1,337 @@
+/*-----------------------*/
+/* Colors                */
+/*-----------------------*/
+
+/* Edit these */
+$theme-normal: #bef;
+$bg-main: #fdfdfd;
+$bg-sec: #eee;
+
+/* Don't edit these */
+$theme-light: lighten(saturate($theme-normal, 20%), 15%);
+$theme-dark: darken(desaturate($theme-normal, 20%), 15%);
+$theme-dark2: darken(desaturate($theme-dark, 20%), 15%);
+$bg-sec-dark: darken($bg-sec, 6%);
+$bg-sec-dark2: darken($bg-sec-dark, 6%);
+
+/*-----------------------*/
+/* Header                */
+/*-----------------------*/
+
+#header {
+  height: 200px;
+  background: #05a;
+  background: -webkit-linear-gradient($theme-dark, $theme-normal);
+  background: -moz-linear-gradient($theme-dark, $theme-normal);
+  background: -o-linear-gradient($theme-dark, $theme-normal);
+  background: linear-gradient($theme-dark, $theme-normal);
+  border-bottom: 1px solid #bbb;
+}
+
+/* Subreddit list */
+
+#sr-header-area {
+  background-color: inherit;
+  border-bottom: none;
+  line-height: 10px;
+}
+
+#sr-header-area a {
+  font-size: 8px;
+  color: #777;
+  transition: color 1s;
+}
+
+#sr-header-area a:hover {
+  color: #444;
+  transition: color 1s;
+}
+
+#sr-header-area .selected a {
+  color: black;
+}
+
+/* Pagename */
+
+.pagename {
+  color: white;
+  text-shadow: 0 0 20px $bg-sec;
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+}
+
+.pagename a {
+  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 22.5pt;
+  font-variant: none;
+  font-weight: normal;
+  letter-spacing: -2px;
+  -webkit-transition: color 1s, font-size 1s, text-shadow 1s, letter-spacing 1s;
+  transition: color 1s, font-size 1s, text-shadow 1s, letter-spacing 1s;
+}
+
+.pagename a:hover {
+  color: #6ac;
+  font-size: 27.5pt;
+  text-shadow: 0 0 10px #aaa;
+  letter-spacing: 2px;
+  text-decoration: none;
+  -webkit-transition: color 1s, font-size 1s, text-shadow 1s, letter-spacing 1s;
+  transition: color 1s, font-size 1s, text-shadow 1s, letter-spacing 1s;
+}
+
+.pagename a:active {
+  letter-spacing: 4px;
+}
+
+/* Snoo picture */
+
+#header-img {
+  position: absolute;
+  right: 100px;
+  top: 15px;
+}
+
+/* Bottom right utility bar */
+
+#header-bottom-right {
+  border-radius: 0;
+  background-color: $bg-sec;
+  border-left: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+}
+
+#header-bottom-right .user, #header-bottom-right a:not(.message-count) {
+  color: #bbb;
+}
+
+/* The tabmenu */
+
+#header .tabmenu {
+  position: absolute;
+  bottom: 2px;
+}
+
+.tabmenu li{
+  margin: 0 1px;
+}
+
+#header .tabmenu li a, #header .tabmenu li.selected a {
+  border-color: #bbb;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  border-radius: 5px 5px 0 0;
+}
+
+#header .tabmenu li a {
+  font-weight: normal;
+  color: #bbb;
+  background-color: $bg-sec;
+  padding: 2px 5px;
+}
+
+#header .tabmenu li a:hover {
+  color: $theme-dark;
+  background-color: $bg-sec-dark;
+}
+
+#header .tabmenu li.selected a {
+  font-weight: bold;
+  color: $theme-normal;
+  background-color: $bg-main;
+  padding-bottom: 3px;
+}
+
+/*-----------------------*/
+/* Body                  */
+/*-----------------------*/
+
+body { background: $bg-main; }
+
+.thing .rank { visibility: collapse; }
+
+.thing .unvoted { color: #555; }
+
+.thing .entry .title:link { color: $theme-dark; }
+
+.thing .entry .title:visited { color: #bbb; }
+
+.stickied .entry .title .title:link, .stickied .entry .title .title:visited { color: #9d8; }
+
+.thing .entry .tagline { color: #555; }
+
+.thing .entry ul li a:link, .thing .entry ul li a:visited {
+  color: #555;
+  font-weight: normal;
+}
+
+.thing .entry ul li a:hover { font-weight: bold; }
+
+.thing .entry ul li {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.thing .entry ul.flat-list li + li::before {
+  content: "|";
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.thing .child {
+  margin-left: 0px;
+  border-left: 1px dashed #05a;
+}
+
+.link .usertext .md {
+  background-color: white;
+  border-color: $bg-sec-dark;
+  max-width: 80em;
+}
+
+/*-----------------------*/
+/* Markdown              */
+/*-----------------------*/
+
+.md h1 {
+  font-size: 2.2em !important;
+}
+
+.md h2 {
+  font-size: 1.7em !important;
+  font-weight: bold;
+  border-bottom: 3px solid gray;
+}
+
+.md h3 { border-bottom: 2px solid gray; }
+
+.md h4 {
+  border-bottom: 2px dashed gray;
+}
+
+.md h5 {
+  border-bottom: 2px dotted gray;
+}
+
+.md h6 {
+  text-decoration: none;
+  border-bottom: 1px dotted gray;
+}
+
+.md blockquote {
+  border-left: 2px solid gray;
+  color: gray;
+}
+
+.md hr {
+  background-color: gray;
+  height: 2px;
+}
+
+.md code, .md pre {
+  background-color: $bg-main !important;
+  border-color: $bg-sec-dark;
+  border-radius: 0;
+}
+
+/*-----------------------*/
+/* Sidebar               */
+/*-----------------------*/
+
+.side {
+  padding: 0 10px;
+  margin-top: 5px;
+  border: 1px solid $bg-sec-dark;
+}
+
+.span {
+  background-color: $bg-main;
+}
+
+.linkinfo {
+  border-radius: 0;
+  background-color: $bg-sec;
+  border: 1px solid #bbb;
+}
+
+.morelink {
+  background-image: none;
+  background-color: $theme-normal;
+  border-color: $theme-dark;
+  border-radius: 10px;
+}
+
+.morelink a {
+  color: #7ab;
+  letter-spacing: 0;
+}
+
+.morelink:hover {
+  background-image: none;
+  background-color: $theme-dark;
+  border-color: #7ab;
+  border-radius: 10px;
+}
+
+.morelink a:hover {
+  color: #589;
+}
+
+.morelink .nub {
+  width: 0;
+}
+
+.subscribe-button .option {
+  background-image: none;
+  background-color: red;
+  border: 1px solid #500;
+  border-radius: 7px;
+}
+
+.subscribe-button .add {
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 7px;
+}
+
+/*-----------------------*/
+/* Scrollbar             */
+/*-----------------------*/
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: $bg-sec-dark;
+  border: 1px solid $bg-sec-dark2;
+  height: 10px;
+  width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+  background-color: $bg-sec;
+  border: 1px solid $bg-sec-dark;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: $theme-dark2;
+  border: 1px solid $theme-dark;
+  border-radius: 2px;
+}
+
+::-webkit-resizer {
+  background-color: $bg-sec-dark2;
+  border: 1px solid #bbb;
+}
+
+/*-----------------------*/
+/* Others                */
+/*-----------------------*/
+
+.sheets { margin-right: 325px; }
+
+.wiki-page .wiki-page-content { margin-right: 334px; }
